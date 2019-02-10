@@ -1,0 +1,33 @@
+<h3>Home</h3>
+<br>
+<form (submit) = "addUser(newUser)">
+	<input type="text" #newUser>
+	<button>
+		Add User
+	</button>
+
+</form>
+
+
+<ul>
+	<li *ngFor = "let user of users">
+		{{ user }} <button (click)="deleteUser(user)">X</button>
+	</li>
+</ul>
+
+<ul>
+		<app-user *ngFor = "let user of users" [nameUser]="user"></app-user>
+</ul>
+
+<div>
+	<form>
+		<input type="text" name="name" [(ngModel)]="name">
+		<input type="text" name="age" [(ngModel)]="age">
+	</form>
+
+	name: {{ name }} <br>
+	age: {{ age }}
+
+</div>
+
+
